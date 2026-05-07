@@ -1,9 +1,10 @@
-import { Button } from "@/components/ui/button";
+import Header from "./components/header";
 
 function App() {
   return (
-    <div className="flex min-h-svh flex-col items-center justify-center">
-      <Button>Hello World</Button>
+    <div className="flex min-h-svh flex-col">
+      <Header />
+      <div id="container" className="flex-1"></div>
     </div>
   );
 }
