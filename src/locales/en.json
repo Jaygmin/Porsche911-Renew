@@ -1,0 +1,54 @@
+{
+  "hero": {
+    "heading": "Driven to Perfection.",
+    "subheading": "Speed, Precision, Legacy",
+    "readMore": "Read more"
+  },
+  "second": {
+    "title": "Porsche 911 Turbo S",
+    "description": "The <span class=\"font-medium\">Porsche 911 Turbo S </span>delivers an impressive performance with<span class=\"font-medium\"> 650 horsepower</span> and exceptional precision.<br>The<span class=\"font-medium\"> active aerodynamic system </span>maximizes aerodynamic efficiency while enhancing the bold and elegant presence of the 911 Turbo S.<br>Porsche's unique design language transcends time and trends, offering an<span class=\"font-medium\"> iconic aesthetic</span> that captivates the eye.<br>Experience the ultimate combination of extreme performance and luxurious driving with the Porsche 911 Turbo S today.",
+    "specs": [
+      { "label": "Curb weight", "value": "1,680kg" },
+      { "label": "Maximum output", "value": "662hp" },
+      { "label": "Top Safe Speed", "value": "330km/h" },
+      { "label": "Fuel Economy (Rating)", "value": "6.8km/L (Grade 5)" },
+      { "label": "CO₂ Emissions", "value": "259g/km" }
+    ],
+    "readMore": "Read More"
+  },
+  "third": {
+    "heading": "Overwhelm many.",
+    "subheading": "While making others celebrate.",
+    "para1": "The 911 Turbo models feature incredible performance\ncombined with breath taking driving dynamics.",
+    "para2": "Even though the basic engine layout has not changed,\nevery detail has been optimized, honed and refined."
+  },
+  "fourth": {
+    "buyNow": "Buy Now",
+    "toast": "This feature is not implemented yet."
+  },
+  "fifth": {
+    "heading1Line1": "The one and",
+    "heading1Line2": "always.",
+    "description1": "Anyone who dreams of owning a Porsche has a clear image in mind. The 911 has been the epitome of an exciting and powerful sports car, offering everyday usability for 60 years. Drive the new 911 and become a part of this extraordinary community.",
+    "heading2": "Comfort.",
+    "description2": "Everything new? Everything the same? Neither. The interior combines what has characterized the 911 Turbo for over 45 years with the possibilities of today."
+  },
+  "footer": {
+    "porscheTitle": "Porsche",
+    "porscheSubtitle": "official porsche site",
+    "porscheCta": "Enter",
+    "locationsTitle": "Locations & Contacts",
+    "locationsSubtitle": "Ask question on official site",
+    "locationsCta": "Get in touch",
+    "socialTitle": "Social Media",
+    "socialSubtitle": "Get in touch with porsche",
+    "companyTitle": "Company & Support",
+    "companyLinksRow1": [
+      "Porsche Cars North America",
+      "Recall Information",
+      "Career",
+      "Global Partnership Council"
+    ],
+    "companyLinksRow2": ["Compliance", "Sustainability", "Newsroom & Press"]
+  }
+}

@@ -18,16 +18,25 @@ import Pinterest from "@/assets/Pinterest.svg";
 import Youtube from "@/assets/Youtube.svg";
 import X from "@/assets/X.svg";
 import LinkedIn from "@/assets/LinkedIn.svg";
+import en from "@/locales/en.json";
+import ko from "@/locales/ko.json";
+import { useLangStore } from "@/store/languageStore";
 
 const buyNowBase =
   "h-9 w-32 cursor-pointer rounded-none border-2 bg-transparent text-sm font-medium hover:bg-transparent lg:h-12.5 lg:w-45 lg:text-[22px]";
 
+const locales = { EN: en, KO: ko };
+
 function App() {
+  const lang = useLangStore((s) => s.lang);
+  const t = locales[lang];
+
   const onClickSecondContainer = () => {
     document
       .getElementById("second-container")
       ?.scrollIntoView({ behavior: "smooth" });
   };
+
   return (
     <>
       <Toaster position="top-center" />
@@ -36,10 +45,10 @@ function App() {
         <div className="flex flex-1 flex-col items-center justify-center bg-[url(/src/assets/Background.png)] bg-cover bg-center bg-no-repeat sm:block">
           <div className="flex flex-col items-center space-y-2 text-center sm:mt-30 sm:ml-15 sm:items-start sm:text-left">
             <h1 className="text-4xl font-semibold tracking-tight text-white sm:text-6xl md:text-5xl">
-              Driven to Perfection.
+              {t.hero.heading}
             </h1>
             <h3 className="text-2xl font-light text-white sm:text-4xl md:text-3xl">
-              Speed, Precision, Legacy
+              {t.hero.subheading}
             </h3>
           </div>
           <div className="right-1/2 left-1/2 mt-8 flex items-center justify-center sm:absolute sm:bottom-10 sm:mt-0">
@@ -48,7 +57,7 @@ function App() {
               variant="outline"
               onClick={onClickSecondContainer}
             >
-              Read more
+              {t.hero.readMore}
             </Button>
           </div>
         </div>
@@ -57,33 +66,14 @@ function App() {
         <div className="flex flex-col items-center gap-8 lg:flex-row lg:items-start lg:justify-between">
           <div className="flex flex-col items-center gap-8 text-center lg:items-start lg:text-left">
             <div className="flex flex-col gap-3">
-              <h1 className="text-2xl font-bold sm:text-4xl">
-                Porsche 911 Turbo S
-              </h1>
-              <p className="font-light tracking-tighter">
-                The <span className="font-medium">Porsche 911 Turbo S </span>
-                delivers an impressive performance with
-                <span className="font-medium"> 650 horsepower</span> and
-                exceptional precision. <br />
-                The
-                <span className="font-medium"> active aerodynamic system </span>
-                maximizes aerodynamic efficiency while enhancing the bold and
-                elegant presence of the 911 Turbo S. <br /> Porsche's unique
-                design language transcends time and trends, offering an
-                <span className="font-medium"> iconic aesthetic</span> that
-                captivates the eye. <br />
-                Experience the ultimate combination of extreme performance and
-                luxurious driving with the Porsche 911 Turbo S today.
-              </p>
+              <h1 className="text-2xl font-bold sm:text-4xl">{t.second.title}</h1>
+              <p
+                className="font-light tracking-tighter"
+                dangerouslySetInnerHTML={{ __html: t.second.description }}
+              />
             </div>
             <div className="flex flex-col items-center gap-6 lg:flex-row lg:flex-wrap lg:items-start lg:justify-start lg:gap-10">
-              {[
-                { label: "Curb weight", value: "1,680kg" },
-                { label: "Maximum output", value: "662hp" },
-                { label: "Top Safe Speed", value: "330km/h" },
-                { label: "Fuel Economy (Rating)", value: "6.8km/L (Grade 5)" },
-                { label: "CO₂ Emissions", value: "259g/km" },
-              ].map(({ label, value }) => (
+              {t.second.specs.map(({ label, value }) => (
                 <div
                   key={label}
                   className="flex flex-col items-center gap-2.5 lg:items-start"
@@ -95,7 +85,7 @@ function App() {
             </div>
             <div className="hidden items-center lg:flex">
               <Button className="cursor-pointer border-black bg-transparent px-4 py-2.5 font-light tracking-tight text-black">
-                Read More
+                {t.second.readMore}
                 <ArrowRight />
               </Button>
             </div>
@@ -108,7 +98,7 @@ function App() {
             />
             <div className="flex items-center lg:hidden">
               <Button className="cursor-pointer border-black bg-transparent px-4 py-2.5 font-light tracking-tight text-black">
-                Read More
+                {t.second.readMore}
                 <ArrowRight />
               </Button>
             </div>
@@ -126,23 +116,15 @@ function App() {
         />
         <div className="flex flex-col items-center gap-2 text-center sm:items-start sm:text-left">
           <p className="text-4xl font-bold text-white sm:text-[60px]">
-            Overwhelm many.
+            {t.third.heading}
           </p>
           <p className="text-2xl font-medium text-white sm:text-[30px]">
-            While making others celebrate.
+            {t.third.subheading}
           </p>
         </div>
         <div className="flex flex-col gap-2 text-center text-sm font-light text-white sm:text-left sm:text-[20px]">
-          <p>
-            The 911 Turbo models feature incredible performance
-            <br />
-            combined with breath taking driving dynamics.
-          </p>
-          <p>
-            Even though the basic engine layout has not changed,
-            <br />
-            every detail has been optimized, honed and refined.
-          </p>
+          <p className="whitespace-pre-line">{t.third.para1}</p>
+          <p className="whitespace-pre-line">{t.third.para2}</p>
         </div>
       </div>
       <div
@@ -161,10 +143,10 @@ function App() {
             </p>
             <Button
               variant="outline"
-              onClick={() => toast("This feature is not implemented yet.")}
+              onClick={() => toast(t.fourth.toast)}
               className={`${buyNowBase} border-[#b92e25] text-[#b92e25] hover:text-[#b92e25]`}
             >
-              Buy Now
+              {t.fourth.buyNow}
             </Button>
           </div>
         </div>
@@ -180,10 +162,10 @@ function App() {
             </p>
             <Button
               variant="outline"
-              onClick={() => toast("This feature is not implemented yet.")}
+              onClick={() => toast(t.fourth.toast)}
               className={`absolute bottom-8 left-8 ${buyNowBase} border-white text-white hover:text-white lg:top-[24%] lg:bottom-auto lg:left-[69%]`}
             >
-              Buy Now
+              {t.fourth.buyNow}
             </Button>
           </div>
           <div className="relative h-75 w-full overflow-hidden lg:h-175 lg:w-1/2">
@@ -197,10 +179,10 @@ function App() {
             </p>
             <Button
               variant="outline"
-              onClick={() => toast("This feature is not implemented yet.")}
+              onClick={() => toast(t.fourth.toast)}
               className={`absolute bottom-8 left-8 ${buyNowBase} border-[#d8a401] text-[#d8a401] hover:text-[#d8a401] lg:top-[24%] lg:bottom-auto lg:left-30`}
             >
-              Buy Now
+              {t.fourth.buyNow}
             </Button>
           </div>
         </div>
@@ -223,26 +205,21 @@ function App() {
             />
             <div className="flex flex-col gap-6 lg:gap-10 lg:pt-8">
               <div className="text-3xl leading-[1.4] font-medium tracking-tight lg:text-[60px] lg:tracking-[-1.5px]">
-                <p>The one and</p>
-                <p>always.</p>
+                <p>{t.fifth.heading1Line1}</p>
+                <p>{t.fifth.heading1Line2}</p>
               </div>
               <p className="text-sm leading-[1.4] tracking-tight lg:max-w-145.5 lg:text-[20px] lg:tracking-[-0.5px]">
-                Anyone who dreams of owning a Porsche has a clear image in mind.
-                The 911 has been the epitome of an exciting and powerful sports
-                car, offering everyday usability for 60 years. Drive the new 911
-                and become a part of this extraordinary community.
+                {t.fifth.description1}
               </p>
             </div>
           </div>
           <div className="mt-16 flex flex-col-reverse items-start gap-10 pb-20 lg:mt-32.5 lg:flex-row lg:items-center lg:gap-8.5 lg:pb-32">
             <div className="flex flex-col items-start gap-6 text-left lg:flex-1 lg:items-end lg:gap-10 lg:text-right">
               <p className="text-3xl leading-[1.4] font-medium tracking-tight lg:text-[60px] lg:tracking-[-1.5px]">
-                Comfort.
+                {t.fifth.heading2}
               </p>
               <p className="text-sm leading-[1.4] tracking-tight lg:max-w-131 lg:text-[20px] lg:tracking-[-0.5px]">
-                Everything new? Everything the same? Neither. The interior
-                combines what has characterized the 911 Turbo for over 45 years
-                with the possibilities of today.
+                {t.fifth.description2}
               </p>
             </div>
             <img
@@ -257,32 +234,32 @@ function App() {
         <div className="flex flex-col gap-10 sm:flex-row sm:gap-16">
           <div className="flex flex-col gap-2.5">
             <p className="text-[26px] leading-[1.4] font-bold tracking-[-0.65px] text-white">
-              Porsche
+              {t.footer.porscheTitle}
             </p>
             <p className="text-[14px] leading-[1.4] tracking-[-0.35px] text-white">
-              official porsche site
+              {t.footer.porscheSubtitle}
             </p>
             <button className="mt-1 h-7.5 w-42.5 cursor-pointer rounded-sm bg-white text-[12px] font-bold tracking-[-0.3px] text-black">
-              Enter
+              {t.footer.porscheCta}
             </button>
           </div>
           <div className="flex flex-col gap-2.5">
             <p className="text-[26px] leading-[1.4] font-bold tracking-[-0.65px] text-white">
-              Locations &amp; Contacts
+              {t.footer.locationsTitle}
             </p>
             <p className="text-[14px] leading-[1.4] tracking-[-0.35px] text-white">
-              Ask question on official site
+              {t.footer.locationsSubtitle}
             </p>
             <button className="mt-1 h-7.5 w-42.5 cursor-pointer rounded-sm bg-white text-[12px] font-bold tracking-[-0.3px] text-black">
-              Get in touch
+              {t.footer.locationsCta}
             </button>
           </div>
           <div className="flex flex-col gap-2.5">
             <p className="text-[26px] leading-[1.4] font-bold tracking-[-0.65px] text-white">
-              Social Media
+              {t.footer.socialTitle}
             </p>
             <p className="text-[14px] leading-[1.4] tracking-[-0.35px] text-white">
-              Get in touch with porsche
+              {t.footer.socialSubtitle}
             </p>
             <div className="mt-1 grid grid-cols-3 gap-1">
               {[Facebook, Instagram, Pinterest, Youtube, X, LinkedIn].map(
@@ -301,15 +278,10 @@ function App() {
         <div className="my-13.5 border-t border-white/20" />
         <div className="flex flex-col gap-2">
           <p className="text-[26px] leading-[1.4] font-bold tracking-[-0.65px] text-white">
-            Company &amp; Support
+            {t.footer.companyTitle}
           </p>
           <div className="flex flex-wrap gap-x-6 gap-y-1.5">
-            {[
-              "Porsche Cars North America",
-              "Recall Information",
-              "Career",
-              "Global Partnership Council",
-            ].map((item) => (
+            {t.footer.companyLinksRow1.map((item) => (
               <p
                 key={item}
                 className="cursor-pointer text-[12px] leading-[1.4] font-medium tracking-[-0.3px] text-white hover:underline"
@@ -319,16 +291,14 @@ function App() {
             ))}
           </div>
           <div className="flex flex-wrap gap-x-6 gap-y-1.5">
-            {["Compliance", "Sustainability", "Newsroom & Press"].map(
-              (item) => (
-                <p
-                  key={item}
-                  className="cursor-pointer text-[12px] leading-[1.4] font-medium tracking-[-0.3px] text-white hover:underline"
-                >
-                  {item}
-                </p>
-              ),
-            )}
+            {t.footer.companyLinksRow2.map((item) => (
+              <p
+                key={item}
+                className="cursor-pointer text-[12px] leading-[1.4] font-medium tracking-[-0.3px] text-white hover:underline"
+              >
+                {item}
+              </p>
+            ))}
           </div>
         </div>
       </footer>

@@ -1,0 +1,54 @@
+{
+  "hero": {
+    "heading": "완벽을 향한 주행.",
+    "subheading": "속도, 정밀함, 명성",
+    "readMore": "Read more"
+  },
+  "second": {
+    "title": "Porsche 911 Turbo S",
+    "description": "Porsche 911 Turbo S는 650마력에 이르는 압도적인 퍼포먼스와 탁월한 정밀성을 자랑합니다. 액티브 에어로다이내믹 시스템은 공기역학적 효율을 극대화하면서도 911 Turbo S의 강렬하고 우아한 존재감을 한층 부각시킵니다. 여기에 Porsche만의 독창적인 디자인 언어가 더해져 시간과 트렌드를 초월한 아이코닉한 아름다움을 선사합니다. 스포츠카의 극한 퍼포먼스와 럭셔리한 드라이빙 경험을 완벽히 결합한 Porsche 911 Turbo S를 지금 만나보세요.",
+    "specs": [
+      { "label": "공차중량", "value": "1,680kg" },
+      { "label": "최고출력", "value": "662마력" },
+      { "label": "안전 최고 속도", "value": "330km/h" },
+      { "label": "정부 공인 표준 연비(등급)", "value": "6.8km/L (5)" },
+      { "label": "CO₂ 배출량", "value": "259g/km" }
+    ],
+    "readMore": "더 알아보기"
+  },
+  "third": {
+    "heading": "많은 이들을 압도.",
+    "subheading": "모두가 그 존재에 찬사를.",
+    "para1": "911 터보 모델은 놀라운 성능과 숨막히는\n드라이빙 다이내믹스를 결합한 것이 특징입니다.",
+    "para2": "기본 엔진 레이아웃은 변하지 않았지만,\n모든 세부 사항이 최적화되고 연마되었으며 정교해졌습니다."
+  },
+  "fourth": {
+    "buyNow": "구매하기",
+    "toast": "구현되지 않은 기능입니다."
+  },
+  "fifth": {
+    "heading1Line1": "The one and",
+    "heading1Line2": "always.",
+    "description1": "포르쉐를 꿈꾸는 사람이라면 누구나 머릿속에 떠오르는 이미지가 있습니다. 911은 60년 동안 일상적인 주행의 유용성을 제공하는 흥미롭고 강력한 스포츠카의 전형이었습니다. 신형 911을 직접 운전하면서 특별한 커뮤니티의 일원이 되어보십시오.",
+    "heading2": "Comfort.",
+    "description2": "모든 것이 새로워졌나요? 모든 것이 똑같나요? 둘 다 아닙니다. 인테리어는 45년 넘게 911 터보의 특징과 오늘날의 가능성을 결합한 것입니다."
+  },
+  "footer": {
+    "porscheTitle": "Porsche",
+    "porscheSubtitle": "포르쉐 공식 사이트",
+    "porscheCta": "확인하기",
+    "locationsTitle": "위치 및 연락처",
+    "locationsSubtitle": "질문이 있으신가요? 저희에게 연락주세요",
+    "locationsCta": "연락하기",
+    "socialTitle": "소셜 미디어",
+    "socialSubtitle": "소셜 미디어를 통해 연락하세요",
+    "companyTitle": "회사 및 지원",
+    "companyLinksRow1": [
+      "Porsche Cars North America",
+      "Recall Information",
+      "Career",
+      "Global Partnership Council"
+    ],
+    "companyLinksRow2": ["Compliance", "Sustainability", "Newsroom & Press"]
+  }
+}

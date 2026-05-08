@@ -1,10 +1,8 @@
-import { useState } from "react";
 import Logo from "@/assets/Logo.svg";
-
-type Lang = "KO" | "EN";
+import { useLangStore } from "@/store/languageStore";
 
 export default function Header() {
-  const [lang, setLang] = useState<Lang>("EN");
+  const { lang, setLang } = useLangStore();
 
   return (
     <header className="flex min-h-20 w-full items-center justify-center px-10 py-5">
