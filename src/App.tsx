@@ -2,6 +2,7 @@ import { ArrowRight } from "lucide-react";
 import Header from "./components/header";
 import { Button } from "./components/ui/button";
 import Porsche911 from "@/assets/911.png";
+import PorscheBackground from "@/assets/Thrid.png";
 
 function App() {
   const onClickSecondContainer = () => {
@@ -37,7 +38,9 @@ function App() {
         <div className="flex flex-col items-center gap-8 lg:flex-row lg:items-start lg:justify-between">
           <div className="flex flex-col items-center gap-8 text-center lg:items-start lg:text-left">
             <div className="flex flex-col gap-3">
-              <h1 className="text-2xl font-bold sm:text-4xl">Porsche 911 Turbo S</h1>
+              <h1 className="text-2xl font-bold sm:text-4xl">
+                Porsche 911 Turbo S
+              </h1>
               <p className="font-light tracking-tighter">
                 The <span className="font-medium">Porsche 911 Turbo S </span>
                 delivers an impressive performance with
@@ -62,13 +65,16 @@ function App() {
                 { label: "Fuel Economy (Rating)", value: "6.8km/L (Grade 5)" },
                 { label: "CO₂ Emissions", value: "259g/km" },
               ].map(({ label, value }) => (
-                <div key={label} className="flex flex-col items-center gap-2.5 lg:items-start">
+                <div
+                  key={label}
+                  className="flex flex-col items-center gap-2.5 lg:items-start"
+                >
                   <span className="text-[18px] font-semibold">{label}</span>
                   <span className="font-light">{value}</span>
                 </div>
               ))}
             </div>
-            <div className="hidden lg:flex items-center">
+            <div className="hidden items-center lg:flex">
               <Button className="cursor-pointer border-black bg-transparent px-4 py-2.5 font-light tracking-tight text-black">
                 Read More
                 <ArrowRight />
@@ -81,13 +87,43 @@ function App() {
               alt="Porsche 911 Image"
               className="h-auto w-130"
             />
-            <div className="flex lg:hidden items-center">
+            <div className="flex items-center lg:hidden">
               <Button className="cursor-pointer border-black bg-transparent px-4 py-2.5 font-light tracking-tight text-black">
                 Read More
                 <ArrowRight />
               </Button>
             </div>
           </div>
+        </div>
+      </div>
+      <div
+        id="third-container"
+        className="relative flex h-175 w-full flex-col justify-between py-15 sm:pl-10"
+      >
+        <img
+          src={PorscheBackground}
+          alt=""
+          className="absolute inset-0 -z-10 size-full object-cover"
+        />
+        <div className="flex flex-col items-center gap-2 text-center sm:items-start sm:text-left">
+          <p className="text-4xl font-bold text-white sm:text-[60px]">
+            Overwhelm many.
+          </p>
+          <p className="text-2xl font-medium text-white sm:text-[30px]">
+            While making others celebrate.
+          </p>
+        </div>
+        <div className="flex flex-col gap-2 text-center text-sm font-light text-white sm:text-left sm:text-[20px]">
+          <p>
+            The 911 Turbo models feature incredible performance
+            <br />
+            combined with breath taking driving dynamics.
+          </p>
+          <p>
+            Even though the basic engine layout has not changed,
+            <br />
+            every detail has been optimized, honed and refined.
+          </p>
         </div>
       </div>
     </>
