@@ -1,8 +1,13 @@
 import { ArrowRight } from "lucide-react";
+import { toast } from "sonner";
 import Header from "./components/header";
 import { Button } from "./components/ui/button";
+import { Toaster } from "./components/ui/sonner";
 import Porsche911 from "@/assets/911.png";
 import PorscheBackground from "@/assets/Thrid.png";
+import GT3RS from "@/assets/GT3RS.png";
+import Boxster from "@/assets/Boxster.png";
+import Carrera from "@/assets/Carrera.png";
 
 function App() {
   const onClickSecondContainer = () => {
@@ -12,6 +17,7 @@ function App() {
   };
   return (
     <>
+      <Toaster position="top-center" />
       <div className="flex h-dvh w-full flex-col">
         <Header />
         <div className="flex flex-1 flex-col items-center justify-center bg-[url(/src/assets/Background.png)] bg-cover bg-center bg-no-repeat sm:block">
@@ -124,6 +130,70 @@ function App() {
             <br />
             every detail has been optimized, honed and refined.
           </p>
+        </div>
+      </div>
+      <div
+        id="four-container"
+        className="flex w-full flex-col divide-y-4 divide-white border-4 border-white"
+      >
+        {/* GT3RS - full width */}
+        <div className="relative h-75 w-full overflow-hidden lg:h-175">
+          <img
+            src={GT3RS}
+            alt=""
+            className="absolute inset-0 size-full object-cover"
+          />
+          <div className="absolute top-8 left-8 flex flex-col gap-3 lg:top-15 lg:left-30 lg:gap-5">
+            <p className="text-2xl leading-[1.4] font-bold text-[#b92e25] lg:text-[72px]">
+              911 GT3RS
+            </p>
+            <Button
+              variant="outline"
+              onClick={() => toast("This feature is not implemented yet.")}
+              className="h-9 w-32 cursor-pointer rounded-none border-2 border-[#b92e25] bg-transparent text-sm font-medium text-[#b92e25] hover:bg-transparent hover:text-[#b92e25] lg:h-12.5 lg:w-45 lg:text-[22px]"
+            >
+              Buy Now
+            </Button>
+          </div>
+        </div>
+        {/* Bottom row - Boxster + Carrera */}
+        <div className="flex flex-col divide-y-4 divide-white lg:flex-row lg:divide-x-4 lg:divide-y-0">
+          {/* Boxster */}
+          <div className="relative h-75 w-full overflow-hidden lg:h-175 lg:w-1/2">
+            <img
+              src={Boxster}
+              alt=""
+              className="absolute inset-0 size-full object-cover object-[40%_50%]"
+            />
+            <p className="absolute top-8 left-8 text-xl leading-[1.4] font-bold text-[#f4f4f6] lg:top-15 lg:left-[38%] lg:text-[56px]">
+              718 Boxster GTS
+            </p>
+            <Button
+              variant="outline"
+              onClick={() => toast("This feature is not implemented yet.")}
+              className="absolute bottom-8 left-8 h-9 w-32 cursor-pointer rounded-none border-2 border-white bg-transparent text-sm font-medium text-white hover:bg-transparent hover:text-white lg:top-[24%] lg:bottom-auto lg:left-[69%] lg:h-12.5 lg:w-45 lg:text-[22px]"
+            >
+              Buy Now
+            </Button>
+          </div>
+          {/* Carrera */}
+          <div className="relative h-75 w-full overflow-hidden lg:h-175 lg:w-1/2">
+            <img
+              src={Carrera}
+              alt=""
+              className="absolute inset-0 size-full object-cover"
+            />
+            <p className="absolute top-8 left-8 text-xl leading-[1.4] font-bold text-[#d8a402] lg:top-15 lg:left-30 lg:text-[56px]">
+              911 Carrera 4 GTS
+            </p>
+            <Button
+              variant="outline"
+              onClick={() => toast("This feature is not implemented yet.")}
+              className="absolute bottom-8 left-8 h-9 w-32 cursor-pointer rounded-none border-2 border-[#d8a401] bg-transparent text-sm font-medium text-[#d8a401] hover:bg-transparent hover:text-[#d8a401] lg:top-[24%] lg:bottom-auto lg:left-30 lg:h-12.5 lg:w-45 lg:text-[22px]"
+            >
+              Buy Now
+            </Button>
+          </div>
         </div>
       </div>
     </>
