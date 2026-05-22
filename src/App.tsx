@@ -4,6 +4,7 @@ import Header from "./components/header";
 import { Button } from "./components/ui/button";
 import { Toaster } from "./components/ui/sonner";
 import Porsche911 from "@/assets/911.png";
+import HeroBackground from "@/assets/Background.png";
 import PorscheBackground from "@/assets/Thrid.png";
 import GT3RS from "@/assets/GT3RS.png";
 import Boxster from "@/assets/Boxster.png";
@@ -42,7 +43,13 @@ function App() {
       <Toaster position="top-center" />
       <div className="flex h-dvh w-full flex-col">
         <Header />
-        <div className="flex flex-1 flex-col items-center justify-center bg-[url(/src/assets/Background.png)] bg-cover bg-center bg-no-repeat sm:block">
+        <div className="relative flex flex-1 flex-col items-center justify-center sm:block">
+          <img
+            src={HeroBackground}
+            alt=""
+            fetchPriority="high"
+            className="absolute inset-0 -z-10 size-full object-cover"
+          />
           <div className="flex flex-col items-center space-y-2 text-center sm:mt-30 sm:ml-15 sm:items-start sm:text-left">
             <h1 className="text-4xl font-semibold tracking-tight text-white sm:text-6xl md:text-5xl">
               {t.hero.heading}
@@ -94,6 +101,7 @@ function App() {
             <img
               src={Porsche911}
               alt="Porsche 911 Image"
+              loading="lazy"
               className="h-auto w-130"
             />
             <div className="flex items-center lg:hidden">
@@ -112,6 +120,7 @@ function App() {
         <img
           src={PorscheBackground}
           alt=""
+          loading="lazy"
           className="absolute inset-0 -z-10 size-full object-cover"
         />
         <div className="flex flex-col items-center gap-2 text-center sm:items-start sm:text-left">
@@ -135,6 +144,7 @@ function App() {
           <img
             src={GT3RS}
             alt=""
+            loading="lazy"
             className="absolute inset-0 size-full object-cover"
           />
           <div className="absolute top-8 left-8 flex flex-col gap-3 lg:top-15 lg:left-30 lg:gap-5">
@@ -155,6 +165,7 @@ function App() {
             <img
               src={Boxster}
               alt=""
+              loading="lazy"
               className="absolute inset-0 size-full object-cover object-[40%_50%]"
             />
             <p className="absolute top-8 left-8 text-xl leading-[1.4] font-bold text-[#f4f4f6] lg:top-15 lg:left-[38%] lg:text-[56px]">
@@ -172,6 +183,7 @@ function App() {
             <img
               src={Carrera}
               alt=""
+              loading="lazy"
               className="absolute inset-0 size-full object-cover"
             />
             <p className="absolute top-8 left-8 text-xl leading-[1.4] font-bold text-[#d8a402] lg:top-15 lg:left-30 lg:text-[56px]">
@@ -194,6 +206,7 @@ function App() {
             <img
               src={Background1}
               alt=""
+              loading="lazy"
               className="h-75 w-full rounded-[24px] object-cover lg:h-165"
             />
           </div>
@@ -201,6 +214,7 @@ function App() {
             <img
               src={Background2}
               alt=""
+              loading="lazy"
               className="h-70 w-full shrink-0 rounded-[24px] object-cover lg:h-132.75 lg:w-180"
             />
             <div className="flex flex-col gap-6 lg:gap-10 lg:pt-8">
@@ -225,6 +239,7 @@ function App() {
             <img
               src={Background3}
               alt=""
+              loading="lazy"
               className="h-70 w-full shrink-0 rounded-[24px] object-cover lg:h-123 lg:w-190"
             />
           </div>
